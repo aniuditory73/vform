@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { publicAsset } from "@/config/assets";
 import { studio } from "@/config/text";
 
 export function HeroTypography() {
   return (
     <>
       <div className="hoodie-photo">
-        <Image src="/media/hoodie-hero.webp" alt="Чёрное худи vform с серо-оранжевым принтом на спине"
+        <Image src={publicAsset("/media/hoodie-hero.webp")} alt="Чёрное худи vform с серо-оранжевым принтом на спине"
           fill sizes="(max-width: 700px) 86vw, (max-width: 1320px) 69vw, 911px" preload />
       </div>
       <div className="hero-content">

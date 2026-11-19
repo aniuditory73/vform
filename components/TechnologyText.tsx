@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { publicAsset } from "@/config/assets";
 import { studio } from "@/config/text";
 
 export function TechnologyText() {
@@ -14,7 +15,7 @@ export function TechnologyText() {
       </section>
       <section className="cloth-details" aria-label="Фактура ткани и принта">
         <div className="cloth-photo" data-parallax>
-          <Image src="/media/fabric-macro.webp" alt="Макросъёмка чёрного трикотажа с принтом vform"
+          <Image src={publicAsset("/media/fabric-macro.webp")} alt="Макросъёмка чёрного трикотажа с принтом vform"
             fill sizes="100vw" />
         </div>
         <ol className="cloth-labels shell">

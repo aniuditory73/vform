@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { publicAsset } from "@/config/assets";
 import { studio } from "@/config/text";
 
 export function DtfBenefits() {
@@ -14,7 +15,7 @@ export function DtfBenefits() {
         <div className="dtf-benefits-images">
           {images.map(({ src, alt }, index) => (
             <div className="dtf-benefits-photo" key={src}>
-              <Image src={src} alt={alt} fill sizes={index === 0
+              <Image src={publicAsset(src)} alt={alt} fill sizes={index === 0
                 ? "(max-width: 700px) 90vw, (max-width: 1410px) 51vw, 720px"
                 : "(max-width: 700px) 82vw, (max-width: 1410px) 36vw, 510px"} />
             </div>

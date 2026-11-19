@@ -2,6 +2,7 @@
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { publicAsset } from "@/config/assets";
 import { useState, type KeyboardEvent } from "react";
 import { portfolio } from "@/config/portfolio";
 
@@ -36,7 +37,7 @@ export function Portfolio() {
         <div className="portfolio-orbit" aria-hidden="true"><span className="orbit-cross" /></div>
         <div id="portfolio-slide" className="portfolio-photo" data-crop={work.crop}>
           <div className="portfolio-image">
-            <Image key={work.src} src={work.src} alt={work.alt} fill
+            <Image key={work.src} src={publicAsset(work.src)} alt={work.alt} fill
               sizes="(max-width: 700px) 91vw, (max-width: 1120px) 67vw, 900px"
               loading="eager" />
           </div>
