@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isPagesBuild = process.env.VFORM_GITHUB_PAGES === "true";
-const basePath = isPagesBuild ? "/vform" : "";
+const basePath = "";
 
 const config: NextConfig = {
   output: isPagesBuild ? "export" : undefined,
