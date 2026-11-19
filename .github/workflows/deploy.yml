@@ -21,6 +21,9 @@ jobs:
       VFORM_GITHUB_PAGES: 'true'
     steps:
       - uses: actions/checkout@v4
+      - name: Read GitHub Pages configuration
+        id: pages
+        uses: actions/configure-pages@v5
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -29,6 +32,8 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run build
+        env:
+          VFORM_PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
